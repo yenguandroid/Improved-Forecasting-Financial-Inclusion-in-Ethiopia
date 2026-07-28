@@ -16,6 +16,7 @@ from dataclasses import dataclass, field
 import pandas as pd
 
 from data_loader import valid_codes
+from constants import KNOWN_MISSING_SOURCE_URL
 
 # Fields on the main sheet that are restricted to reference_codes.xlsx
 # enumerations, per field name there.
@@ -44,7 +45,6 @@ REQUIRED_MAIN_FIELDS_BY_TYPE = {
 SOFT_REQUIRED_MAIN_FIELDS_BY_TYPE = {
     "observation": ["source_url"],
 }
-KNOWN_MISSING_SOURCE_URL = {"REC_0013", "REC_0020", "REC_0023", "REC_0024", "REC_0025"}
 
 
 @dataclass
