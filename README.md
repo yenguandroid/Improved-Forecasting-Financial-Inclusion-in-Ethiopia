@@ -100,9 +100,9 @@ Two real bugs were caught and fixed during development of this module, both docu
 **Yengusie Demilie Alene**
 GitHub: [yenguandroid](https://github.com/yenguandroid)
 Repository: [Improved-Forecasting-Financial-Inclusion-in-Ethiopia](https://github.com/yenguandroid/Improved-Forecasting-Financial-Inclusion-in-Ethiopia)
-LinkedIn : www.linkedin.com/in/yengusie-alene-8a341591
- Email: yengusied@gmail.com
+LinkedIn / Email: *add your preferred contact link here before submission*
 
+---
 
 ## Appendix: Full Task-by-Task Summary
 
