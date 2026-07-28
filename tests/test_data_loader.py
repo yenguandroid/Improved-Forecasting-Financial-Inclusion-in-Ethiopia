@@ -48,7 +48,22 @@ def test_observations_have_pillar(starter):
     assert obs["pillar"].notna().all()
 
 
-@pytest.mark.skipif(not ENRICHED_PATH.exists(), reason="enriched dataset not generated yet")
+def test_date_parsing_survives_column_shifted_rows(starter):
+    """
+    Regression test for REC_0006 in the starter data, which has shifted
+    metadata columns (comparable_country/collected_by/collection_date/notes)
+    such that 'collection_date' actually contains free text
+    ("Account ownership increased from 46% to 49%") instead of a date.
+    The loader must degrade this single cell to NaT rather than crashing.
+    """
+    main, _, _ = starter
+    assert pd.api.types.is_datetime64_any_dtype(main["collection_date"])
+    rec6 = main[main["record_id"] == "REC_0006"]
+    assert len(rec6) == 1
+    assert pd.isna(rec6["collection_date"].iloc[0])
+    # the actually-important measured value must still be intact
+    assert rec6["value_numeric"].iloc[0] == 49.0
+    assert rec6["indicator_code"].iloc[0] == "ACC_OWNERSHIP"
 class TestEnrichedDataset:
     @pytest.fixture(scope="class")
     def enriched(self):
