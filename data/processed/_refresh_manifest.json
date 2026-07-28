@@ -1,0 +1,22 @@
+{
+  "refreshed_at": "2026-07-26T12:46:54.930777+00:00",
+  "pipeline_stages": [
+    "build_enrichment.py",
+    "build_impact_refinements.py",
+    "build_task4_targets.py",
+    "build_quality_trust_enrichment.py"
+  ],
+  "final_output": "ethiopia_fi_unified_data_quality_trust.xlsx",
+  "validation_passed": true,
+  "validation_errors": [],
+  "validation_warnings": [
+    "5 'observation' record(s) missing 'source_url' (pre-existing, documented starter-data gap -- see data_enrichment_log.md): ['REC_0013', 'REC_0020', 'REC_0023', 'REC_0024', 'REC_0025']"
+  ],
+  "record_counts": {
+    "total": 58,
+    "observations": 41,
+    "events": 14,
+    "targets": 3,
+    "impact_links": 21
+  }
+}

@@ -42,6 +42,7 @@ def obs(record_id, pillar, indicator, indicator_code, indicator_direction,
         value_numeric, value_type, unit, observation_date, gender, location,
         source_name, source_type, source_url, confidence,
         original_text, notes, value_text=None):
+    observation_date = pd.Timestamp(observation_date)
     row = blank_row(MAIN_COLS)
     row.update(dict(
         record_id=record_id, record_type="observation", pillar=pillar,
@@ -143,6 +144,7 @@ new_events = []
 
 def event(record_id, category, indicator, observation_date, source_name,
           source_type, source_url, confidence, original_text, notes):
+    observation_date = pd.Timestamp(observation_date)
     row = blank_row(MAIN_COLS)
     row.update(dict(
         record_id=record_id, record_type="event", category=category, pillar=None,
