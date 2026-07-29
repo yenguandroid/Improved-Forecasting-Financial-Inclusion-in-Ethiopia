@@ -100,9 +100,9 @@ Two real bugs were caught and fixed during development of this module, both docu
 **Yengusie Demilie Alene**
 GitHub: [yenguandroid](https://github.com/yenguandroid)
 Repository: [Improved-Forecasting-Financial-Inclusion-in-Ethiopia](https://github.com/yenguandroid/Improved-Forecasting-Financial-Inclusion-in-Ethiopia)
-LinkedIn / Email: *add your preferred contact link here before submission*
+LinkedIn: www.linkedin.com/in/yengusie-alene-8a341591
+Email: yengusied@gmail.com
 
----
 
 ## Appendix: Full Task-by-Task Summary
 
@@ -148,7 +148,13 @@ This project was built in two phases: an original five-task build, and a subsequ
 ### Task 5 -- Interactive Dashboard
 
 `dashboard/app.py` -- a Streamlit dashboard reusing the same tested `src/` modules as the notebooks (no logic reimplemented). Originally 4 pages (Overview, Trends, Forecasts, Inclusion Projections); a 5th (Model Explainability) was added in the Engineering Excellence pass.
+![alt text](image.png)
 
+![alt text](image-9.png)
+
+![alt text](image-10.png)
+
+![alt text](image-11.png)
 ### Enhancement 1 -- Findex 2025 Digital Payment Usage Conflict, Resolved
 
 The 2024 Digital Payment Usage figure (`REC_0043`) was originally derived algebraically from a secondary source (21.0%, medium confidence). A first attempt to access the primary Findex 2025 country table directly failed for documented, legitimate reasons (gated download, unparsable spreadsheet, JS-rendered dashboard) -- written up honestly as a non-result. A second attempt, using a user-supplied CSV export of the same primary source via a different route, succeeded: **20.66% (2024)**, sourced directly to Findex, description matching the project's indicator definition word-for-word. Value corrected to 20.7%, confidence raised medium -> high; the Task 4 forecast was re-run end-to-end, shifting the Usage curve down 0.3pp across 2025-2027.
@@ -164,6 +170,21 @@ Addressed a self-identified limitation from Task 3: additive-only combination as
 ### Enhancement 4 -- On-Demand Data Refresh and Monitoring Groundwork
 
 `src/validate.py` (schema conformance, duplicate IDs, orphaned links, required fields, blank-pillar-for-events) deliberately splits structural errors from completeness warnings, so the 5 known starter-data gaps don't permanently fail every run while a *new* gap is flagged as a likely regression. `refresh_data.py` runs the full 4-stage pipeline, validates the result, and writes a JSON manifest a dashboard or CI step can read without re-running the pipeline. Wired into the dashboard as a sidebar status display + on-demand refresh button.
+![alt text](image-1.png)
+
+![alt text](image-2.png)
+
+![alt text](image-3.png)
+
+![alt text](image-5.png)
+
+![alt text](image-4.png)
+
+![alt text](image-6.png)
+
+![alt text](image-7.png)
+
+![alt text](image-8.png)
 
 ### Data Pipeline
 
